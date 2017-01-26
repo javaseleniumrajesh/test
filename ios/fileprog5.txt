@@ -1,0 +1,29 @@
+File class program #5:
+==================
+//FilterListFiles.java
+Import java.io.*;
+public class FilterListFiles{ 
+public static void main(String args[])
+{
+String strDir = "../IOStreams";
+File f = new File(strDir);
+FilenameFilter onlyFile = new FileExtention("txt");
+String strFile[] = f.list(onlyFile);
+System.out.println("\nThe JAVA files in the current directory are:\n");
+for(int i=0; i<strFile.length; i++)
+{
+System.out.println(strFile[i]);
+}
+} 
+}
+//FileExtention.java
+import java.io.*;
+class FileExtention implements FilenameFilter {
+String extFile;
+public FileExtention(String extFile) {
+this.extFile = "." + extFile;
+}
+public boolean accept(File dir, String name) {
+return name.endsWith(extFile);
+}
+}

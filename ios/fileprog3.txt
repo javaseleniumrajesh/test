@@ -1,0 +1,27 @@
+File class Program #3:
+==================
+class FileParentDirectoryDemo {
+public static void main(String[] args) throws IOException{
+File f1 = new File("abc.txt");
+f1.createNewFile(); //abc.txt is created as normal file in current working 
+directory
+File f2 = new File("bbc.txt");
+f2.mkdir(); //bbc.txt is created as directory in current working directory. 
+We can create directories with extensions.
+File f3 = new File("xyz");
+f3.mkdir(); //xyz is created as directory in current working directory.
+File f4 = new File(f3, "1.txt");
+f4.createNewFile(); //1.txt is created as normal file in xyz directory.
+File f5 = new File(f3, "abc");
+f5.mkdir(); //abc is created as directory in xyz directory.
+File f6 = new File("pqr", "stv");
+f6.mkdirs(); //pqr is created as directory in current working directory, and stv is 
+created in pqr as subdirectory.
+System.out.println("f1: "+f1);
+System.out.println("f2: "+f2);
+System.out.println("f3: "+f3);
+System.out.println("f4: "+f4);
+System.out.println("f5: "+f5);
+System.out.println("f6: "+f6);
+}
+}

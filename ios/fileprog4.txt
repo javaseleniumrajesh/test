@@ -1,0 +1,30 @@
+File class program #4:
+==================
+//List directory files
+import java.io.*;
+class FileNamesAndCount {
+static int dirCount;
+static int fileCount;
+public static void main(String[] args) {
+File dir = new File("abc");
+print(dir);
+System.out.println(); 
+System.out.println("Total files: "+(fileCount + dirCount)); 
+System.out.println("Number of Dirs: "+dirCount); 
+System.out.println("Number of Files: "+fileCount);
+}
+static void print(File dir){
+File[] files = dir.listFiles();
+for (int i = 0; i < files.length; i++){
+File f = files[i];
+if (f.isFile()){
+fileCount++;
+System.out.println(f +" is a file.");
+}else{
+dirCount++;
+System.out.println(f + " is a directory");
+print(f);
+} 
+}
+}
+}
